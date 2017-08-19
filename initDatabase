@@ -14,7 +14,7 @@ class initDatabase:
     print constants.BASE_URL
     base_url =constants.BASE_URL
     cred =credentials.Certificate(constants.MY_CERTIFICATE_PATH)
-    firebase_admin.initialize_app(cred, {'databaseURL': 'https://indaba-e4716.firebaseio.com'})
+    firebase_admin.initialize_app(cred, {'databaseURL': '{your database url}'})
     child_node = raw_input("Get Refrence: ")
     #Set firebase database reference
     ref = db.reference(constants.BASE_URL + child_node)
