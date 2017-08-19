@@ -5,7 +5,7 @@ from firebase_admin import credentials
 import constants
 import json
 
-class initDatabase:
+class update_database:
 
     data_map ={}
     checker = 'N'
@@ -57,9 +57,7 @@ class initDatabase:
                     self.update(self.ref, self.data_map)
 
         
-    def update(self, ref, hash_map):
-        key = ''
-        value =''
+    def update(self, ref, json_data):
         dbRef = None
 
         #If the children is none, pass it to the initial reference
@@ -68,6 +66,6 @@ class initDatabase:
         else:
             #Add more children
             dbRef = ref.child(self.childrens)
-        dbRef.update(hash_map)
-        print hash_map
-initDatabase()
+        dbRef.update(json_data)
+        print json_data
+update_database()
